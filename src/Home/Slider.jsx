@@ -9,7 +9,7 @@ export default function Slider() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/front/sliders')
+    fetch('https://electro-backend-m418.onrender.com/api/front/sliders')
       .then((res) => res.json())
       .then((result) => {
         if (result.success && result.data.length > 0) {

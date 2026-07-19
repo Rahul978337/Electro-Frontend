@@ -24,7 +24,7 @@ function OrderDetails() {
   
   const fetchOrders = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/Orders-details`);
+      const res = await axios.get(`https://electro-backend-m418.onrender.com/api/Orders-details`);
       console.log("first",res)
       if (res.data.success) {
         setOrders(res.data.data || []);

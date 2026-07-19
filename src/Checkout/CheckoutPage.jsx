@@ -19,7 +19,7 @@ export default function CheckoutPage() {
   // 📦 API CALL
   const getCart = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/cart/${userId}`);
+      const res = await axios.get(`https://electro-backend-m418.onrender.com/cart/${userId}`);
       setCartItems(res.data?.cart?.items || []);
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ export default function CheckoutPage() {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/myProfile/${userId}`);
+      const response = await axios.get(`https://electro-backend-m418.onrender.com/myProfile/${userId}`);
       if (response.data.success || response.data.sucess) {
         setUserData(response.data.data);
       }
@@ -56,7 +56,7 @@ export default function CheckoutPage() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const response = await axios.post("http://localhost:8080/api/placeOrder",{
+          const response = await axios.post("https://electro-backend-m418.onrender.com/api/placeOrder",{
             userId: userId,
             paymentMode: "COD"
           });
@@ -301,7 +301,7 @@ export default function CheckoutPage() {
 //   // 📦 API CALL
 //   const getCart = async () => {
 //     try {
-//       const res = await axios.get(`http://localhost:8080/cart/${userId}`);
+//       const res = await axios.get(`https://electro-backend-m418.onrender.com/cart/${userId}`);
 //       setCartItems(res.data?.cart?.items || []);
 //     } catch (error) {
 //       console.log(error);

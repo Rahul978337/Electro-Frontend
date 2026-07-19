@@ -23,7 +23,7 @@ function EditCategory() {
   const [description, setDescription] = useState("")
 
   const fetctCategory = async () => {
-     const response = await axios.get(`http://localhost:8080/api/single-category/${_id}`);
+     const response = await axios.get(`https://electro-backend-m418.onrender.com/api/single-category/${_id}`);
 //  console.log("response",response)
      if (response) {
        const data=(response.data.data || []);
@@ -45,7 +45,7 @@ function EditCategory() {
     formData.append("description", description)
     formData.append("image", image)
 
-    const response = await axios.post(`http://localhost:8080/api/update-category/${_id}`,
+    const response = await axios.post(`https://electro-backend-m418.onrender.com/api/update-category/${_id}`,
       formData)
       console.log("first",response)
     if (response.data.sucess) {

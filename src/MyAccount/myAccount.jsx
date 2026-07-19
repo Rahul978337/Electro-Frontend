@@ -20,7 +20,7 @@ export default function MyProfile() {
 const get_id = localStorage.getItem("userId")
   const myprofile = async () => {
     
-    const response = await axios.get(`http://localhost:8080/api/v1/customer-profile?_id=${get_id}`)
+    const response = await axios.get(`https://electro-backend-m418.onrender.com/api/v1/customer-profile?_id=${get_id}`)
 
     console.log("response", response)
 

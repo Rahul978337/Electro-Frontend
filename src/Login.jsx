@@ -24,7 +24,7 @@ export default function Login() {
 
 
     const response = await axios.post(
-      "http://localhost:8080/api/v2/loginUser",
+      "https://electro-backend-m418.onrender.com/api/v2/loginUser",
       {
         email: email,
         password: password

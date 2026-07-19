@@ -9,7 +9,7 @@ export default function Navbar() {
 
 
   const FetchCategoryName = async () => {
-    const response = await axios.get("http://localhost:8080/find-category-name", FetchCategoryName)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name", FetchCategoryName)
     // console.log("categaory name",response)
     if (response) {
       setCategoryName(response.data.data)

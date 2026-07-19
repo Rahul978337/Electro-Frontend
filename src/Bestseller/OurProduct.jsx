@@ -16,7 +16,7 @@ export default function OurProduct() {
 
 
   const fetchProduct = async () => {
-    const response = await axios.get("http://localhost:8080/api/frontView/list", fetchProduct)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/frontView/list", fetchProduct)
 
     if (response) {
       setProduct(response.data.data)
@@ -49,7 +49,7 @@ export default function OurProduct() {
     }
 
   try {
-    const response = await axios.post("http://localhost:8080/add-to-cart", {
+    const response = await axios.post("https://electro-backend-m418.onrender.com/add-to-cart", {
       userId,
       productId
     });

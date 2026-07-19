@@ -25,7 +25,7 @@ function ContactDetails() {
 
   const getContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/allContact"); 
+      const res = await axios.get("https://electro-backend-m418.onrender.com/api/allContact"); 
       console.log("first",res)
       setContacts(res.data.data);
     } catch (error) {

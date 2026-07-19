@@ -25,7 +25,7 @@ export default function MyOrders() {
   const getCart = async (userId) => {
     try {
       const res = await axios.get(
-       `http://localhost:8080/api/myOrders?userId=${userId}`
+       `https://electro-backend-m418.onrender.com/api/myOrders?userId=${userId}`
       );
 
       console.log("VIEW order RESPONSE ", res.data);

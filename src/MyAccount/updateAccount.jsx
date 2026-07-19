@@ -23,7 +23,7 @@ function EditCustomerProfile() {
 
    const myprofile = async () => {
     
-    const response = await axios.get(`http://localhost:8080/api/v1/customer-profile?_id=${_id}`)
+    const response = await axios.get(`https://electro-backend-m418.onrender.com/api/v1/customer-profile?_id=${_id}`)
 
     console.log("response", response)
 
@@ -54,7 +54,7 @@ function EditCustomerProfile() {
     formData.append("address", address)
     formData.append("image", image)
 
-    const response = await axios.put(`http://localhost:8080/updateprofile?_id=${_id}`, formData)
+    const response = await axios.put(`https://electro-backend-m418.onrender.com/updateprofile?_id=${_id}`, formData)
 
     if (response.data.success) {
       toast.success(response.data.message)

@@ -42,7 +42,7 @@ if (validateForm()) {
         password:password
     }
     // console.log("data",data)
-    const response= await axios.post("http://localhost:8080/api/v1/loginUser",data)
+    const response= await axios.post("https://electro-backend-m418.onrender.com/api/v1/loginUser",data)
     // console.log("response",response)
     if (response.data.success) {
         const token=response.data.token

@@ -24,7 +24,7 @@ formData.append("name",name)
 formData.append("description",description)
 formData.append("image",image)
 
-const response=await axios.post("http://localhost:8080/api/category/add",
+const response=await axios.post("https://electro-backend-m418.onrender.com/api/category/add",
       formData)
       if (response.data.sucess) {
         toast.success(response.data.message)

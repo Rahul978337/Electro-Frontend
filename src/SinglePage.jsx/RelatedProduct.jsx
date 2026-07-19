@@ -15,13 +15,13 @@ export default function RelatedProduct() {
       let categoryId = null;
       if (_id) {
         // Fetch current product to find its category id
-        const productRes = await axios.get(`http://localhost:8080/api/find-single-product-front/${_id}`);
+        const productRes = await axios.get(`https://electro-backend-m418.onrender.com/api/find-single-product-front/${_id}`);
         const currentProduct = productRes.data?.data;
         categoryId = currentProduct?.cat_id?._id || currentProduct?.cat_id;
       }
 
       // Fetch all products
-      const response = await axios.get("http://localhost:8080/api/frontView/list")
+      const response = await axios.get("https://electro-backend-m418.onrender.com/api/frontView/list")
       if (response && response.data && response.data.data) {
         let allProducts = response.data.data;
         

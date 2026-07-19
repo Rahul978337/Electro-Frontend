@@ -28,7 +28,7 @@ function EditCustomer() {
 
 
  const fetchUsers = async () => {
-     const response = await axios.get(`http://localhost:8080/api/v1/find-user/${_id}`);
+     const response = await axios.get(`https://electro-backend-m418.onrender.com/api/v1/find-user/${_id}`);
  console.log("response",response)
      if (response) {
        const data=(response.data.data || []);
@@ -66,7 +66,7 @@ function EditCustomer() {
     formData.append("image",image)
 
   const response = await axios.post(
-  `http://localhost:8080/api/update-user/${_id}`,
+  `https://electro-backend-m418.onrender.com/api/update-user/${_id}`,
   formData
 )
 

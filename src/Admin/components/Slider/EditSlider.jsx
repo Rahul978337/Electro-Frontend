@@ -23,7 +23,7 @@ function EditSlider() {
 
   useEffect(() => {
     const fetchSlider = async () => {
-      const response = await axios.get("http://localhost:8080/api/get-all-sliders");
+      const response = await axios.get("https://electro-backend-m418.onrender.com/api/get-all-sliders");
       if (response.data.success) {
         const found = response.data.data.find((s) => s._id === sliderId);
         if (found) {
@@ -57,7 +57,7 @@ function EditSlider() {
     if (image) formData.append("image", image);
 
     const response = await axios.put(
-      `http://localhost:8080/api/update-slider/${sliderId}`,
+      `https://electro-backend-m418.onrender.com/api/update-slider/${sliderId}`,
       formData
     );
 

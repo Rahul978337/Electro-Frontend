@@ -36,7 +36,7 @@ function AddSlider() {
     if (image) formData.append("image", image);
 
     const response = await axios.post(
-      "http://localhost:8080/api/add-slider",
+      "https://electro-backend-m418.onrender.com/api/add-slider",
       formData
     );
 

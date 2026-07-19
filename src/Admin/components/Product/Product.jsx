@@ -32,7 +32,7 @@ function ProductManager() {
 
 
   const fetchProduct = async () => {
-    const response = await axios.get("http://localhost:8080/api/view/list", fetchProduct)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/view/list", fetchProduct)
 
     if (response) {
       setProduct(response.data.data)
@@ -48,7 +48,7 @@ function ProductManager() {
   const [categoryNmae, setCategoryName] = useState([]);
 
   const FetchCategoryName = async () => {
-    const response = await axios.get("http://localhost:8080/find-category-name", FetchCategoryName)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name", FetchCategoryName)
     // console.log("categaory name",response)
     if (response) {
       setCategoryName(response.data.data)
@@ -66,7 +66,7 @@ function ProductManager() {
   const searchProduct = async (e) => {
     e.preventDefault()
 
-    const response = await axios.get("http://localhost:8080/api/search-product",
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/search-product",
       {
         params: {
           name: name,
@@ -107,7 +107,7 @@ function ProductManager() {
     })
     if (result.isConfirmed) {
       // Swal.fire("Saved!", "", "success");
-      const response = await axios.delete(`http://localhost:8080/api/delete-product/${id}`)
+      const response = await axios.delete(`https://electro-backend-m418.onrender.com/api/delete-product/${id}`)
 
       if (response.data.success) {
         fetchProduct()
@@ -150,7 +150,7 @@ function ProductManager() {
         status: status
       }
       // Swal.fire("Saved!", "", "success");
-      const response = await axios.post(`http://localhost:8080/updateStatusProduct/${id}`, body)
+      const response = await axios.post(`https://electro-backend-m418.onrender.com/updateStatusProduct/${id}`, body)
 
       if (response.data.success) {
         fetchProduct()

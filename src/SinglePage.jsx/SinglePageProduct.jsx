@@ -24,7 +24,7 @@ export default function SinglePageProduct() {
   // console.log("cate id",cat_id)
 
   const fetchProduct = async () => {
-    const response = await axios.get(`http://localhost:8080/api/find-single-product-front/${_id}`);
+    const response = await axios.get(`https://electro-backend-m418.onrender.com/api/find-single-product-front/${_id}`);
     console.log("response", response)
     if (response) {
       const data = (response.data.data || []);
@@ -63,7 +63,7 @@ export default function SinglePageProduct() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/add-to-cart', {
+      const response = await axios.post('https://electro-backend-m418.onrender.com/add-to-cart', {
         userId: userId,
         productId: _id
       });
@@ -90,7 +90,7 @@ export default function SinglePageProduct() {
 
 
   const FetchCategoryName = async () => {
-    const response = await axios.get("http://localhost:8080/find-category-name", FetchCategoryName)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name", FetchCategoryName)
     // console.log("categaory name",response)
     if (response) {
       setCategoryName(response.data.data)

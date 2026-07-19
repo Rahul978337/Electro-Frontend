@@ -23,12 +23,12 @@ export default function MyProfile() {
 
   const adminId = localStorage.getItem("adminId");
 
-  const IMAGE_BASE_URL = "http://localhost:8080/uploads/users/";
+  const IMAGE_BASE_URL = "https://electro-backend-m418.onrender.com/uploads/users/";
 
   // 🔹 Fetch Admin Profile
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/myProfile/${adminId}`);
+      const response = await axios.get(`https://electro-backend-m418.onrender.com/myProfile/${adminId}`);
       if (response.data.success || response.data.sucess) {
         setAdminData(response.data.data);
       }
@@ -70,7 +70,7 @@ export default function MyProfile() {
   //     }
 
   //     const response = await axios.put(
-  //       `http://localhost:8080/api/update-user/${adminId}`,
+  //       `https://electro-backend-m418.onrender.com/api/update-user/${adminId}`,
   //       formData,
   //       { headers: { "Content-Type": "multipart/form-data" } }
   //     );

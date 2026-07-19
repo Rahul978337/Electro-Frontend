@@ -233,7 +233,7 @@ export default function ContactStart() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/contact",
+        "https://electro-backend-m418.onrender.com/api/contact",
         data
       );
       console.log("response", response.data);

@@ -10,7 +10,7 @@ function Dashboard() {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/dashboard-stats");
+      const res = await axios.get("https://electro-backend-m418.onrender.com/api/dashboard-stats");
       if (res.data.success) {
         setStats(res.data.data);
       }

@@ -10,7 +10,7 @@ export default function ViewCart() {
   // 📦 Fetch Cart
   const getCart = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/cart/${userId}`);
+      const res = await axios.get(`https://electro-backend-m418.onrender.com/cart/${userId}`);
       setCartItems(res.data.cart.items);
     } catch (error) {
       console.log(error);
@@ -25,7 +25,7 @@ export default function ViewCart() {
   // ➕➖ Quantity update karo
   const updateQuantity = async (productId, action) => {
     try {
-      await axios.post("http://localhost:8080/add-to-cart", {
+      await axios.post("https://electro-backend-m418.onrender.com/add-to-cart", {
         userId,
         productId,
         action  // "increase" ya "decrease"

@@ -23,7 +23,7 @@ function EditProduct() {
   // console.log("cate id",cat_id)
 
   const fetchProduct = async () => {
-     const response = await axios.get(`http://localhost:8080/api/find-single-product/${_id}`);
+     const response = await axios.get(`https://electro-backend-m418.onrender.com/api/find-single-product/${_id}`);
  console.log("response",response)
      if (response) {
        const data=(response.data.data || {});
@@ -55,7 +55,7 @@ function EditProduct() {
     formData.append("image", image)
 
     const response = await axios.post(
-      `http://localhost:8080/api/update-product/${_id}`,
+      `https://electro-backend-m418.onrender.com/api/update-product/${_id}`,
       formData,
 
     )
@@ -81,7 +81,7 @@ function EditProduct() {
   const [category, setCategory] = useState([]);
 
   const FetchCategoryName = async () => {
-    const response = await axios.get("http://localhost:8080/find-category-name", FetchCategoryName)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name", FetchCategoryName)
     // console.log("categaory name",response)
     if (response) {
       setCategory(response.data.data)

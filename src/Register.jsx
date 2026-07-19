@@ -38,7 +38,7 @@ export default function Register() {
     formData.append("image", image)
 
     const response = await axios.post(
-      "http://localhost:8080/api/v2/regiterUser",
+      "https://electro-backend-m418.onrender.com/api/v2/regiterUser",
       formData,
       {
         headers: {

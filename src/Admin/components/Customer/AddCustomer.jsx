@@ -45,7 +45,7 @@ function AddCustomer() {
     formData.append("image",image)
 
     const response=await axios.post(
-      "http://localhost:8080/api/v1/addUser",
+      "https://electro-backend-m418.onrender.com/api/v1/addUser",
       formData,
       {
         headers:{

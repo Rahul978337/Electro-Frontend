@@ -30,7 +30,7 @@ export default function ChangePassword() {
     
     try {
       const response = await axios.post(
-        `http://localhost:8080/changePassword/${userId}`,
+        `https://electro-backend-m418.onrender.com/changePassword/${userId}`,
         {
           oldpassword: passwords.oldpassword,
           newpassword: passwords.newpassword

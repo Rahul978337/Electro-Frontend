@@ -34,7 +34,7 @@ function AddProduct() {
     formData.append("image", image)
 
     const response = await axios.post(
-      "http://localhost:8080/api/product/add",
+      "https://electro-backend-m418.onrender.com/api/product/add",
       formData,
 
     )
@@ -60,7 +60,7 @@ function AddProduct() {
   const [category, setCategory] = useState([]);
 
   const FetchCategoryName = async () => {
-    const response = await axios.get("http://localhost:8080/find-category-name", FetchCategoryName)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name", FetchCategoryName)
     // console.log("categaory name",response)
     if (response) {
       setCategory(response.data.data)

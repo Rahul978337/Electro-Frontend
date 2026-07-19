@@ -28,7 +28,7 @@ function Category() {
 
 
   const fetchUsers = async () => {
-    const response = await axios.get("http://localhost:8080/api/category/list");
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/category/list");
 
     if (response) {
       setCategory(response.data.data || []);
@@ -42,7 +42,7 @@ function Category() {
   const searchCategory = async (e) => {
     e.preventDefault()
 
-    const response = await axios.get("http://localhost:8080/api/v1/searchCategory",
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/v1/searchCategory",
       {
         params: {
           name: name
@@ -69,7 +69,7 @@ function Category() {
   const [categoryNmae, setCategoryName] = useState([]);
 
   const FetchCategoryName = async () => {
-    const response = await axios.get("http://localhost:8080/find-category-name", FetchCategoryName)
+    const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name", FetchCategoryName)
     // console.log("categaory name",response)
     if (response) {
       setCategoryName(response.data.data)
@@ -97,7 +97,7 @@ function Category() {
     })
     if (result.isConfirmed) {
       // Swal.fire("Saved!", "", "success");
-      const response = await axios.delete(`http://localhost:8080/api/delete-category/${id}`)
+      const response = await axios.delete(`https://electro-backend-m418.onrender.com/api/delete-category/${id}`)
 
       if (response.data.success) {
         fetchUsers()
@@ -140,7 +140,7 @@ function Category() {
         status: status
       }
       // Swal.fire("Saved!", "", "success");
-      const response = await axios.post(`http://localhost:8080/updateStatusCategory/${id}`, body)
+      const response = await axios.post(`https://electro-backend-m418.onrender.com/updateStatusCategory/${id}`, body)
 
       if (response.data.success) {
         fetchUsers()

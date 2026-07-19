@@ -28,7 +28,7 @@ function Customer() {
 
 
   const fetchUsers = async () => {
-    const response = await axios.get("http://localhost:8080/api/v1/getAllUsers");
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/v1/getAllUsers");
 
     if (response) {
       setCustomers(response.data.data || []);
@@ -44,7 +44,7 @@ function Customer() {
   const searchCustomer = async (e) => {
     e.preventDefault()
 
-    const response = await axios.get("http://localhost:8080/api/v1/searchUsers",
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/v1/searchUsers",
       {
         params: {
           first_name: firstName,
@@ -88,7 +88,7 @@ function Customer() {
     })
     if (result.isConfirmed) {
       // Swal.fire("Saved!", "", "success");
-      const response = await axios.delete(`http://localhost:8080/api/v1/delet-user/${id}`)
+      const response = await axios.delete(`https://electro-backend-m418.onrender.com/api/v1/delet-user/${id}`)
 
       if (response.data.success) {
         fetchUsers()
@@ -131,7 +131,7 @@ function Customer() {
         status: status
       }
       // Swal.fire("Saved!", "", "success");
-      const response = await axios.post(`http://localhost:8080/updateStatus/${id}`, body)
+      const response = await axios.post(`https://electro-backend-m418.onrender.com/updateStatus/${id}`, body)
 
       if (response.data.success) {
         fetchUsers()

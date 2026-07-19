@@ -17,7 +17,7 @@ export default function Topbar() {
 
   const FetchCategoryName = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/find-category-name")
+      const response = await axios.get("https://electro-backend-m418.onrender.com/find-category-name")
       if (response && response.data && response.data.data) {
         setCategory(response.data.data)
       }
@@ -62,18 +62,18 @@ export default function Topbar() {
             {/* LEFT */}
             <div className="col-lg-4 text-center text-lg-start mb-lg-0">
               <div className="d-inline-flex align-items-center" style={{ height: 45 }}>
-                <a href="#" className="text-muted me-2">Help</a>
+                <Link to="/help" className="text-muted me-2">Help</Link>
                 <small> / </small>
-                <a href="#" className="text-muted mx-2">Support</a>
+                <Link to="/support" className="text-muted mx-2">Support</Link>
                 <small> / </small>
-                <a href="#" className="text-muted ms-2">Contact</a>
+                <Link to="/contact" className="text-muted ms-2">Contact</Link>
               </div>
             </div>
 
             {/* CENTER */}
             <div className="col-lg-4 text-center d-flex align-items-center justify-content-center">
               <small className="text-dark">Call Us:</small>
-              <a href="#" className="text-muted">
+              <a href="tel:+911234567890" className="text-muted">
                 (+012) 1234 567890
               </a>
             </div>
@@ -84,25 +84,25 @@ export default function Topbar() {
 
                 {/* Currency */}
                 <div className="dropdown">
-                  <a href="#" className="dropdown-toggle text-muted me-2" data-bs-toggle="dropdown">
+                  <button type="button" className="btn btn-link p-0 text-muted me-2 dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
                     <small>USD</small>
-                  </a>
+                  </button>
                   <div className="dropdown-menu rounded">
-                    <a href="#" className="dropdown-item">Euro</a>
-                    <a href="#" className="dropdown-item">Dollar</a>
+                    <button type="button" className="dropdown-item">Euro</button>
+                    <button type="button" className="dropdown-item">Dollar</button>
                   </div>
                 </div>
 
                 {/* Language */}
                 <div className="dropdown">
-                  <a href="#" className="dropdown-toggle text-muted mx-2" data-bs-toggle="dropdown">
+                  <button type="button" className="btn btn-link p-0 text-muted mx-2 dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
                     <small>English</small>
-                  </a>
+                  </button>
                   <div className="dropdown-menu rounded">
-                    <a href="#" className="dropdown-item">English</a>
-                    <a href="#" className="dropdown-item">Turkish</a>
-                    <a href="#" className="dropdown-item">Spanish</a>
-                    <a href="#" className="dropdown-item">Italiano</a>
+                    <button type="button" className="dropdown-item">English</button>
+                    <button type="button" className="dropdown-item">Turkish</button>
+                    <button type="button" className="dropdown-item">Spanish</button>
+                    <button type="button" className="dropdown-item">Italiano</button>
                   </div>
                 </div>
 
@@ -110,15 +110,15 @@ export default function Topbar() {
                 {token ? (
                   // ✅ USER LOGGED IN
                   <div className="dropdown">
-                    <a
-                      href="#"
-                      className="dropdown-toggle text-muted ms-2"
+                    <button
+                      type="button"
+                      className="btn btn-link p-0 text-muted ms-2 dropdown-toggle text-decoration-none"
                       data-bs-toggle="dropdown"
                     >
                       <small>
                         <i className="fa fa-home me-2" /> My Dashboard
                       </small>
-                    </a>
+                    </button>
                     <div className="dropdown-menu rounded">
 
                       <Link to={"/myprofile"} className="dropdown-item">
@@ -214,17 +214,17 @@ export default function Topbar() {
             <div className="col-md-4 col-lg-3 text-center text-lg-end">
               <div className="d-inline-flex align-items-center">
 
-                <a href="#" className="text-muted d-flex align-items-center justify-content-center me-3">
+                <button type="button" className="btn p-0 text-muted d-flex align-items-center justify-content-center me-3">
                   <span className="rounded-circle btn-md-square border">
                     <i className="fas fa-random" />
                   </span>
-                </a>
+                </button>
 
-                <a href="#" className="text-muted d-flex align-items-center justify-content-center me-3">
+                <button type="button" className="btn p-0 text-muted d-flex align-items-center justify-content-center me-3">
                   <span className="rounded-circle btn-md-square border">
                     <i className="fas fa-heart" />
                   </span>
-                </a>
+                </button>
 
                 <Link to={"/cart"} className="text-muted d-flex align-items-center justify-content-center">
                   <span className="rounded-circle btn-md-square border">

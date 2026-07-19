@@ -17,12 +17,12 @@ export default function MyProfile() {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const userId = localStorage.getItem("userId");
-  const IMAGE_BASE_URL = "http://localhost:8080/uploads/users/";
+  const IMAGE_BASE_URL = "https://electro-backend-m418.onrender.com/uploads/users/";
 
   // Fetch profile
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/myProfile/${userId}`);
+      const response = await axios.get(`https://electro-backend-m418.onrender.com/myProfile/${userId}`);
       if (response.data.success || response.data.sucess) {
         setUserData(response.data.data);
       }
@@ -61,7 +61,7 @@ export default function MyProfile() {
       }
 
       const response = await axios.post(
-        `http://localhost:8080/api/update-user/${userId}`,
+        `https://electro-backend-m418.onrender.com/api/update-user/${userId}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

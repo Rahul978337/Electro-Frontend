@@ -20,7 +20,7 @@ function SliderManager() {
   );
 
   const fetchSliders = async () => {
-    const response = await axios.get("http://localhost:8080/api/get-all-sliders");
+    const response = await axios.get("https://electro-backend-m418.onrender.com/api/get-all-sliders");
     if (response) {
       setSliders(response.data.data || []);
     }
@@ -43,7 +43,7 @@ function SliderManager() {
 
     if (result.isConfirmed) {
       const response = await axios.delete(
-        `http://localhost:8080/api/delete-slider/${id}`
+        `https://electro-backend-m418.onrender.com/api/delete-slider/${id}`
       );
       if (response.data.success) {
         fetchSliders();
@@ -66,7 +66,7 @@ function SliderManager() {
 
     if (result.isConfirmed) {
       const response = await axios.put(
-        `http://localhost:8080/api/update-slider/${id}`,
+        `https://electro-backend-m418.onrender.com/api/update-slider/${id}`,
         { status: !currentStatus }
       );
       if (response.data.success) {
