@@ -22,47 +22,83 @@ export default function Register() {
   const [address, setAddress] = useState("")
   const [image, setImage] = useState(null)
 
+  // const registerUser = async (e) => {
+  //   e.preventDefault();
+
+
+
+  //   const formData = new FormData();
+
+  //   formData.append("first_name", first_name)
+  //   formData.append("last_name", last_name)
+  //   formData.append("email", email)
+  //   formData.append("password", password)
+  //   formData.append("mobile", mobile)
+  //   formData.append("address", address)
+  //   formData.append("image", image)
+
+  //   const response = await axios.post(
+  //     "https://electro-backend-m418.onrender.com/api/v2/regiterUser",
+  //     formData,
+  //     {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data"
+  //       }
+  //     }
+  //   )
+
+  //   // console.log("response", response)
+
+  //   if (response.data.sucess) {
+  //     toast.success(response.data.message)
+  //     setTimeout(() => {
+  //       navigate('/', { replace: true });
+  //     }, 1500);
+  //   }
+  //   else {
+  //     toast.error(response.data.message)
+  //     // console.log(error.response.data);
+  //   }
+
+
+
+  // }
+
   const registerUser = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-
-
+  try {
     const formData = new FormData();
 
-    formData.append("first_name", first_name)
-    formData.append("last_name", last_name)
-    formData.append("email", email)
-    formData.append("password", password)
-    formData.append("mobile", mobile)
-    formData.append("address", address)
-    formData.append("image", image)
+    formData.append("first_name", first_name);
+    formData.append("last_name", last_name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("mobile", mobile);
+    formData.append("address", address);
+    formData.append("image", image);
 
     const response = await axios.post(
       "https://electro-backend-m418.onrender.com/api/v2/regiterUser",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      }
-    )
+      formData
+    );
 
-    // console.log("response", response)
+    console.log("Response:", response.data);
 
-    if (response.data.sucess) {
-      toast.success(response.data.message)
+    if (response.data.sucess === true) {
+      toast.success(response.data.message);
+
       setTimeout(() => {
-        navigate('/', { replace: true });
+        navigate("/login");
       }, 1500);
+    } else {
+      toast.error(response.data.message);
     }
-    else {
-      toast.error(response.data.message)
-      // console.log(error.response.data);
-    }
-
-
-
+  } catch (error) {
+    console.log(error);
+    toast.error(error.response?.data?.message || error.message);
   }
+};
 
   return (
     <div>
